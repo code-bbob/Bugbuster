@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Hackathon\KU\env"
+VIRTUAL_ENV="E:\KU\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
