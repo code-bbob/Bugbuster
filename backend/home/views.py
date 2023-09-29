@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect 
-from home.models import Contact,Post
+from home.models import Contact
 from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
@@ -63,15 +63,6 @@ def contact(request):
 def company(request):
     return render(request, 'home/company.html')
 
-def kawadi(request):
-    if request.method == 'POST':
-        author = request.POST.get('author')
-        content = request.POST.get('content')
-        post = Post(author=author, content=content, date=datetime.today())
-        post.save()
-        messages.success(request, 'Blog post successfully')
-
-    return render(request, 'home/kawadi.html')
 
 
 def logoutUser(request):
