@@ -9,3 +9,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return  self.name
+
+class Post(models.Model):
+    author = models.TextField(max_length=44)
+    content = models.TextField() 
+    date=models.DateField()
+
+    def __str__(self):
+        return self.author
