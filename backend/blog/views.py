@@ -7,7 +7,7 @@ from blog.models import Post
 def blogHome(request):
     allPosts = Post.objects.all()
     context = {'allPosts': allPosts}
-    return render(request,'home/home.html')
+    return render(request,'blog/blogHome.html')
 
 def blogPost(request, slug):
     return HttpResponse(f'This is blog post: {slug}')
