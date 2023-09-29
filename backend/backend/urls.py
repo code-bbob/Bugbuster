@@ -24,5 +24,4 @@ admin.site.index_title = "Welcome to Bibhab Researcher Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls'))
 ]
