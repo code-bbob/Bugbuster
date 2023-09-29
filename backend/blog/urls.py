@@ -1,5 +1,5 @@
 """
-URL configuration for backend project.
+URL configuration for nclex project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,14 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
-admin.site.site_header = "Bibhab Admin"
-admin.site.site_title = "Bibhab Admin Portal"
-admin.site.index_title = "Welcome to Bibhab Researcher Portal"
-
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('home.urls')),
-    path('blog/', include('blog.urls')),
+    path('', views.blogHome, name='blogHome'),
+    path('<str:slug>', views.blogPost, name='blogPost'),
 ]
+ 
