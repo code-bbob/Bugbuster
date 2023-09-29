@@ -1,0 +1,97 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    line-height: 1rem;
+}
+
+#name {
+    text-align: center;
+    background-color: #563d7c;
+    color: whitesmoke;
+    margin-bottom: 0;
+    padding: 15px;
+    font-size: 20px;
+}
+
+#search {
+    margin-left: 65%;
+}
+
+#navName {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.nav-item {
+    margin: none;
+    height: 40px;
+}
+
+#nav {
+    background-color: #7952b3;
+}
+
+.navbar {
+    padding: 0rem 0rem;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: whitesmoke;
+}
+
+.btn {
+    color: whitesmoke;
+    background-color: #563d7c;
+}
+
+.btn:hover {
+    color: #212529;
+    background-color: #7f81eb;
+    text-decoration: none;
+}
+
+#scope {
+    padding-top: 2rem;
+}
+
+.section {
+    padding-left: 4rem;
+}
+
+.card {
+    background-color: #fefaf1;
+}
+
+#post {
+    height: 60px;
+    width: 60px;
+    background: #7952b3;
+    margin: 2rem;
+    position: fixed;
+    float: right;
+    z-index: 1;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    font-size: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#post:hover {
+    color: #212529;
+    background-color: #7f81eb;
+    text-decoration: none;
+}
+
+.card-img-top {
+    height: 10rem;
+    width: 184.579px;
+}
