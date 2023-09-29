@@ -40,6 +40,9 @@ def home(request):
     else:
         return render(request, 'home/home.html')
 
+def blogpersonal(request, slug):
+    return HttpResponse('')
+
 def link(request):
     return HttpResponse('This is a link')
 
@@ -56,6 +59,20 @@ def contact(request):
         messages.success(request, 'Messages sent successfully')
     
     return render(request, 'home/contact.html')
+
+def company(request):
+    return render(request, 'home/company.html')
+
+def kawadi(request):
+    if request.method == 'POST':
+        author = request.POST.get('author')
+        content = request.POST.get('content')
+        post = Post(author=author, content=content, date=datetime.today())
+        post.save()
+        messages.success(request, 'Blog post successfully')
+
+    return render(request, 'home/kawadi.html')
+
 
 def logoutUser(request):
     logout(request)
