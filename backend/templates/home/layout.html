@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   {% load static %}
 
@@ -12,9 +11,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./library/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="./library/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/8f9c41fe8d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'home/Style/style.css' %}">
+    <title>BugBusters</title>
 </head>
 
 <body>
@@ -50,6 +49,12 @@
                 </form>
             </div>
         </div>
+
+        <Button>
+            <a class="logoutBtn" href="/logoutUser">
+                Logout
+            </a>
+        </Button>
     </nav>
     <div>
         <button id="post">+</button>
