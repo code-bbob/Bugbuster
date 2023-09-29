@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    line-height: 1rem;
+    overflow-x: hidden;
+}
+
+.top {
+    margin: 5rem 5rem;
+    display: grid;
+}
+
+.details {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50rem;
+}
+
+.btn {
+    color: whitesmoke;
+    background-color: #563d7c;
+}
+
+.btn:hover {
+    color: #212529;
+    background-color: #7f81eb;
+    text-decoration: none;
+}
+
+.labels {
+    padding: 0.5rem;
+}
+
+.textArea {
+    margin-left: 1rem;
+}
