@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect 
-from home.models import Contact,Post
+from home.models import Contact
 from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
@@ -40,6 +40,9 @@ def home(request):
     else:
         return render(request, 'home/home.html')
 
+def blogpersonal(request, slug):
+    return HttpResponse('')
+
 def link(request):
     return HttpResponse('This is a link')
 
@@ -56,6 +59,11 @@ def contact(request):
         messages.success(request, 'Messages sent successfully')
     
     return render(request, 'home/contact.html')
+
+def company(request):
+    return render(request, 'home/company.html')
+
+
 
 def logoutUser(request):
     logout(request)
