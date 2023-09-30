@@ -35,14 +35,14 @@
           <p class="card-text">
             {{post.content| truncatechars:100}}
           </p>
-          <a href="{{post.slug}}" class="btn btn-primary">See More</a>
+          <a href="/blog/{{post.slug}}" class="btn btn-primary">See More</a>
         </div>
       </div>
     </div>
   </div>
   {% endfor %}
   <!-- see more -->
-  <a href="#" class="btn" id="seeMore">See more</a>
+  <a href="/blog/blogpost" class="btn" id="seeMore">Continue reading</a>
 </div>
 
 <!-- post button -->
