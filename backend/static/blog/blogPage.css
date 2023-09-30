@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: auto;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.containerBlogPage{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #0007 ;
+}
+
+.Title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Title span:first-child {
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 2rem;
+    background: #21AB71;
+    transform: translateY(0.5rem);
+    margin-right: 0.4rem;
+    
+}
+
+.Title span {
+    font-size: 2rem;
+    font-family: "Roboto slab";
+    font-weight: 900;
+}
+
+.menuOptions{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.menuOptions ul{
+    list-style: none;
+    display: flex;
+    font-family: "Josefin Sans";
+    gap: 3rem;
+    align-self: flex-end;
+}
+
+.menuOptions ul a {
+    color: #000a;
+    text-decoration: none;
+}
+
+.Search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#search {
+    height: 2rem;
+    width: 12rem;
+    border-radius: 0.7rem;
+    border: 1.5px solid black;
+    padding-left: 2.5rem;
+}
+
+.fa-solid{
+    position: absolute;
+    left: 0.7rem;
+}
+
+.searchTxt{
+    border: none;
+    padding: 0.6rem 1rem;
+    background: #21AB71;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    font-family: "Josefin Sans";
+    font-weight: 700;
+    color: white;
+}
+
+.blogContainer{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.section-one{
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    border-right: 2px solid #0005;
+}
+
+.topSectionOne{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.Links{
+    transform: translateY(3rem);
+}
+
+.Links p{
+    font-weight: 700;
+    font-family: "Roboto";
+    transform: translateY(1rem);
+}
+
+.gitSection{
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 2rem;
+}
+
+.gitSection a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.gitSection .gitLink{
+    width: 5rem;
+    word-wrap: break-word;
+}
+
+.secOpt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: "Poppins";
+}
+
+.secOpt i {
+    font-size: 1rem;
+}
+
+.bottomSectionOne{
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+}
+
+.socialProfile{
+    display: flex;
+    padding: 1rem 0;
+    gap: 1.7rem;
+    font-size: 1.5rem;
+}
+
+.bottomSectionOne p{
+    font-weight: 700;
+    font-family: poppins;
+}
+
+.section-two{
+    flex: 10;
+    padding: 2rem;
+}
+
+.section-two .BlogTitle{
+    font-size: 1.7rem;
+    font-family: "Poppins";
+}
+
+.section-two .BlogTitle span{
+    color: #21ab71;
+}
+
+.section-two .BlogContent{
+    transform: translateY(2rem);
+    margin: 0 3rem;
+    font: 500;
+    font-size: 0.8rem;
+    font-family: 'Poppins';
+}
+
+.section-three{
+    flex: 2;
+    border-left: 2px solid #0005;
+}

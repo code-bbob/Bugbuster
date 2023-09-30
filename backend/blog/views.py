@@ -13,7 +13,7 @@ def blogHome(request):
 def blogPost(request, slug): 
     post=Post.objects.filter(slug=slug).first()
     context={'post':post,'user': request.user}
-    return render(request, "blog/blogPost.html", context)
+    return render(request, "blog/blogPage.html", context)
     
 
 def postComment(request):

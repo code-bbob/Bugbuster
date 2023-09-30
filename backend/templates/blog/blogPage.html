@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://kit.fontawesome.com/8f9c41fe8d.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:wght@700&family=Roboto+Slab:wght@500&family=Sofia&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster+Two&family=Roboto&family=Ubuntu:wght@500&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster+Two&family=Roboto&family=Roboto+Slab:wght@600&family=Ubuntu:wght@500&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
+
+<link rel="stylesheet" href="{% static 'blog/blogPage.css' %}">
+
+<body>
+    <div class="containerBlogPage">
+        <div class="navbar">
+            <div class="Title">
+                <span class="dotTitle"></span>
+                <span>BugBusters</span>
+            </div>
+            <div class="menuOptions">
+                <ul>
+                    <a href="#">
+                        <li>Company</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="#">
+                        <li>Blogs</li>
+                    </a>
+                </ul>
+                <div class="Search">
+                    <input type="search" name="search" id="search" placeholder="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="button" value="Search" class="searchTxt">
+                </div>
+            </div>
+
+            <!-- <div class="loginOption">
+                <div class="login">
+                    <p>Login</p>
+                </div>
+                <div class="SignUp">
+                    <p>Sign Up</p>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="blogContainer">
+            <div class="section-one">
+                <div class="topSectionOne">
+                    <div class="reactions secOpt">
+                        <span class="material-symbols-outlined">
+                            add_reaction
+                        </span>
+                        2.1k
+                    </div>
+                    <div class="comment secOpt">
+                        <i class="fa-regular fa-comment"></i>
+                        730
+                    </div>
+                    <div class="share secOpt">
+                        <span class="material-symbols-outlined">
+                            ios_share
+                        </span>
+                        52
+                    </div>
+                </div>
+                <div class="Links">
+                    <p class="LinksName">Links</p>
+                    <div class="gitSection">
+                        <span class="material-symbols-outlined">
+                            linked_services
+                        </span>
+                        <div class="gitLink">
+                            <a href="#">
+                                https://github.com/kuhackfest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottomSectionOne">
+                    <p>Social</p>
+                    <div class="socialProfile">
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-two">
+                <div class="BlogTitle">Hey Guys, we got the issue on the feature branch <span>#</span></div>
+                <div class="BlogContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Voluptate tenetur vitae voluptatibus minus perspiciatis pariatur fugit? Inventore 
+                    odio amet recusandae error voluptatibus a aliquam vel voluptate voluptates magni 
+                    asperiores corrupti officiis reiciendis minus repellat quod, beatae illum distinctio. 
+                    Eius voluptatum distinctio eos consequatur velit. Accusamus id asperiores nobis amet 
+                    unde ex quis odio dignissimos?
+                </div>
+            </div>
+            <div class="section-three"></div>
+        </div>
+
+        {% block body %}
+        {% endblock %}
+
+</body>
+
+</html>
