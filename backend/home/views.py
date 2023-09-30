@@ -101,3 +101,15 @@ def search(request):
         messages.warning(request, "No search results found. Please refine your query.")
     params={'allPosts': allPosts, 'query': query}
     return render(request, 'home/search.html', params)
+
+
+def post(request):
+    if request.method == 'POST':
+        author = request.POST.get('author')
+        content = request.POST.get('content')
+        title = request.POST.get('title')
+        post = Post(author=author, content=content,title=title, date=datetime.today())
+        post.save()
+        messages.success(request, 'Blog post successfully')
+
+    return render(request, 'home/post.html')

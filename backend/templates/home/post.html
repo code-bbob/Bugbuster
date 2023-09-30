@@ -2,27 +2,29 @@
 
 <div class="pop">
   <h1>Write About you bug!</h1>
-
-  <div class="provider">
-    <label for="fromUser">From : </label>
-    <input type="text" name="fromUser" id="fromUser" placeholder="Username" />
-  </div>
+  <form action="/post/" method="POST">
+    {% csrf_token %}
   <div class="postTitle">
     <label for="postTitle">Title :</label>
-    <input type="text" name="postTitle" id="postTitle" placeholder="Title" />
+    <input type="text" name="title" id="title" placeholder="title" />
+  </div>
+  <div class="author">
+    <label for="postTitle">Author :</label>
+    <input type="text" name="author" id="author" placeholder="author" />
   </div>
   <div class="Description">
-    <label for="description">Description :</label>
+    <label for="content">Description :</label>
     <textarea
-      name="description"
-      id="description"
+      name="content"
+      id="content"
       cols="30"
       rows="10"
     ></textarea>
   </div>
 
   <input type="file" name="chooseFile" id="chooseFile" />
-  <input type="submit" value="Submit" />
+  <button type="submit" class="btn btn-primary">Submit</button>
 </div>
+</form>
 
 {% endblock %}
