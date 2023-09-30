@@ -1,0 +1,28 @@
+{% extends 'home/layout.html' %} {% block body %}
+
+<div class="pop">
+  <h1>Write About you bug!</h1>
+
+  <div class="provider">
+    <label for="fromUser">From : </label>
+    <input type="text" name="fromUser" id="fromUser" placeholder="Username" />
+  </div>
+  <div class="postTitle">
+    <label for="postTitle">Title :</label>
+    <input type="text" name="postTitle" id="postTitle" placeholder="Title" />
+  </div>
+  <div class="Description">
+    <label for="description">Description :</label>
+    <textarea
+      name="description"
+      id="description"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+
+  <input type="file" name="chooseFile" id="chooseFile" />
+  <input type="submit" value="Submit" />
+</div>
+
+{% endblock %}
