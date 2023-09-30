@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.pop {
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    gap: 2rem
+}
+
+#fromUser,
+#postTitle,
+#description {
+    height: 3rem;
+    width: 20rem;
+    border-radius: 1rem;
+    margin-left: 1rem;
+    padding: 0 1rem;
+}
+
+.provider,
+.postTitle,
+.Description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
