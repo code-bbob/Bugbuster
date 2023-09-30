@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from blog.models import Post
 
 
 
@@ -85,3 +86,18 @@ def signup(request):
             return redirect('/signup')
     else:
         return render(request, 'home/signup.html')
+    
+
+def search(request):
+    query=request.GET['query']
+    if len(query)>78:
+        allPosts=Post.objects.none()
+    else:
+        allPostsTitle= Post.objects.filter(title__icontains=query)
+        allPostsAuthor= Post.objects.filter(author__icontains=query)
+        allPostsContent =Post.objects.filter(content__icontains=query)
+        allPosts=  allPostsTitle.union(allPostsContent, allPostsAuthor)
+    if allPosts.count()==0:
+        messages.warning(request, "No search results found. Please refine your query.")
+    params={'allPosts': allPosts, 'query': query}
+    return render(request, 'home/search.html', params)

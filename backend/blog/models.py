@@ -4,8 +4,9 @@ from django.db import models
 class Post(models.Model):
     author = models.TextField(max_length=44)
     title = models.CharField(max_length=255, default='')
-    content = models.TextField() 
+    content = models.TextField()
+    slug = models.CharField(max_length=130) 
     date=models.DateField()
 
     def __str__(self):
-        return self.author
+        return 'Message from ' + self.title + ': ' + self.author

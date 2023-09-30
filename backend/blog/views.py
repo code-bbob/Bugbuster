@@ -7,10 +7,12 @@ from blog.models import Post
 def blogHome(request):
     allPosts = Post.objects.all()
     context = {'allPosts': allPosts}
-    return render(request,'blog/blogHome.html')
+    return render(request,'blog/blogHome.html',  context)
 
 def blogPost(request, slug):
-    return HttpResponse(f'This is blog post: {slug}')
+    post = Post.objects.filter(slug=slug).first()
+    context = {'post': post}
+    return render(request, 'blog/blogPost.html', context)
     
 def kawadi(request):
     if request.method == 'POST':
