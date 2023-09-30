@@ -46,50 +46,27 @@
                     </li>
                     
                 </ul>
-<<<<<<< HEAD
-                <form class="d-flex" id="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn" type="submit" style="border-radius: 0">
-                        Search
-                    </button>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn" type="submit" style="border-radius: 0">
-                        Search
-                    </button>
-                </form>
-=======
                 <form method="get" action= "/search " class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query" >
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
->>>>>>> bibhab
-                <div class="dropdown dropProfile">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-user"></i>
-                    </button>
-                    <ul class="dropdown-menu dropMenu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">{{request.user}}</a></li>
-                        <li><a class="dropdown-item" href="/logoutUser">Log Out</a></li>
-                    </ul>
-                </div>
 
 
                 <div class="dropdown dropProfile">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-user"></i>
                     </button>
                     <ul class="dropdown-menu dropMenu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        <li><a class="dropdown-item" href="/logoutUser">Log Out</a></li>
                     </ul>
                 </div>
 
             </div>
     </nav>
     <div>
-        <button id="post">+</button>
+
     </div>
     <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

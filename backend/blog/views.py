@@ -14,12 +14,15 @@ def blogPost(request, slug):
     context = {'post': post}
     return render(request, 'blog/blogPost.html', context)
     
-def kawadi(request):
+def post(request):
+    
+    
     if request.method == 'POST':
         author = request.POST.get('author')
         content = request.POST.get('content')
+        title = request.POST.get('title')
         post = Post(author=author, content=content, date=datetime.today())
         post.save()
         messages.success(request, 'Blog post successfully')
 
-    return render(request, 'blog/kawadi.html')
+    return render(request, 'blog/post.html')
