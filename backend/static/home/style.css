@@ -120,3 +120,37 @@ body {
 .form-control {
     width: 10rem;
 }
+
+/* BLOGHome.html */
+.blogHomeSection{
+    width: 100%;
+    display: flex ;
+    flex-direction: column;
+}
+
+.blogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    padding: 1rem;
+    align-self: flex-start;
+    width: 90%;
+    height: 22rem;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.cardGroup {
+    width: 25rem;
+    height: 20rem;
+}
+
+/* Initially hide the content */
+#toggleContent {
+    height: 22rem;
+}
+
+/* Show the content when the "expanded" class is present */
+#toggleContent.expanded {
+    height: auto;
+}
