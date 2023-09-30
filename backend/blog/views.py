@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect 
 from datetime import datetime
 from django.contrib import messages
-from blog.models import Post
+from blog.models import Post, BlogComment
+from django.contrib.auth.models import User
 
 
 def blogHome(request):
@@ -9,20 +10,21 @@ def blogHome(request):
     context = {'allPosts': allPosts}
     return render(request,'blog/blogHome.html',  context)
 
-def blogPost(request, slug):
-    post = Post.objects.filter(slug=slug).first()
-    context = {'post': post}
-    return render(request, 'blog/blogPost.html', context)
+def blogPost(request, slug): 
+    post=Post.objects.filter(slug=slug).first()
+    comments= BlogComment.objects.filter(post=post)
+    context={'post':post, 'comments': comments, 'user': request.user}
+    return render(request, "blog/blogPost.html", context)
     
-def post(request):
-    
-    
-    if request.method == 'POST':
-        author = request.POST.get('author')
-        content = request.POST.get('content')
-        title = request.POST.get('title')
-        post = Post(author=author, content=content, date=datetime.today())
-        post.save()
-        messages.success(request, 'Blog post successfully')
 
-    return render(request, 'blog/post.html')
+def postComment(request):
+    if request.method == "POST":
+        comment=request.POST.get('comment')
+        user=request.user
+        postSno =request.POST.get('postSno')
+        post= Post.objects.get(sno=postSno)
+        comment=BlogComment(comment= comment, user=user, post=post)
+        comment.save()
+        messages.success(request, "Your comment has been posted successfully")
+        
+    return redirect(f"/blog/{post.slug}")
