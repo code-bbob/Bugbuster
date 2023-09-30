@@ -1,0 +1,13 @@
+{% extends 'home/layout.html' %}
+{% block title %}
+BlogPost
+{% endblock %}
+ {% block body %}
+ <div class="container">
+    <h2 class="display-5 link-body-emphasis mb-1">{{post.title}}</h2>
+    <p class="blog-post-meta">{{post.date}} by <a href="#">{{post.author}}</a></p>
+
+    <p>{{post.content}}</p>
+
+ </div>
+{% endblock %}

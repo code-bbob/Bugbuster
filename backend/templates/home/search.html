@@ -1,8 +1,29 @@
-{% extends 'home/layout.html' %} {% block body %}
+{% extends 'home/layout.html' %} 
+{% block title %}Search Results{% endblock %}
+
+{% block body %}
 <!-- private section -->
 <div class="section">
 
+    <h2>Search Results</h2>
+
   <h2 id="scope">Private:</h2>
+
+  {% if allPosts|length < 1 %}
+  <p>No search results</p>
+   Your search query : <b>{{query}}</b> did not match any documents. <br>
+   Suggestions:
+   <ul>
+   <li>Make sure that all words are spelled correctly.</li>
+   <li>Try more general keywords.</li>
+  <li> Try fewer keywords.</li>
+  <li> Try different keywords.</li>
+   </li>
+   </ul>
+
+
+   {% endif %}
+   
   {% for post in allPosts %}
   <br />
   <div class="row">
@@ -136,3 +157,4 @@
   crossorigin="anonymous"
 ></script>
 {% endblock %}
+ 
