@@ -9,12 +9,13 @@
     <div class="row cardGroup">
       <div class="col-4">
         <div class="card" style="width: 20rem">
-          <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
+          <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fcomputer-code&psig=AOvVaw0lnzQYF27AdXXAoM5OjVC-&ust=1696210398799000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPC8x6Pa04EDFQAAAAAdAAAAABAE" class="card-img-top" alt="loading" />
           <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
             <p class="card-text">
               {{post.content| truncatechars:100}}
             </p>
+            <a href="/blog/{{post.slug}}" class="btn btn-primary">See More</a>
           </div>
         </div>
       </div>

@@ -30,16 +30,11 @@ def signup(request):
 
 @login_required(login_url='/login')
 def home(request):
-    if request.method == 'POST':
-        author = request.POST.get('author')
-        content = request.POST.get('content')
-        posts = Post(author=author, content=content, date=datetime.today())
-        posts.save()
-        messages.success(request, 'Posted Sucessfully')
-        return render(request, 'home/home.html')
+    allPosts = Post.objects.all()  
+    context = {'allPosts': allPosts}
+    messages.success(request, 'Posted Sucessfully')
+    return render(request, 'home/home.html', context)
     
-    else:
-        return render(request, 'home/home.html')
 
 def blogpersonal(request, slug):
     return HttpResponse('')

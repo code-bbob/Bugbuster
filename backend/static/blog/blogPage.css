@@ -73,7 +73,7 @@ body{
     display: flex;
     align-items: center;
 }
-#search {
+#query {
     height: 2rem;
     width: 12rem;
     border-radius: 0.7rem;
@@ -206,4 +206,159 @@ body{
 .section-three{
     flex: 2;
     border-left: 2px solid #0005;
+}
+
+
+/* style.css */
+#scope {
+    padding-top: 2rem;
+}
+
+.section {
+    padding-left: 4rem;
+}
+
+.card {
+    background-color: #fefaf1;
+}
+
+#post {
+    height: 60px;
+    width: 60px;
+    background: #7952b3;
+    margin: 2rem;
+    position: fixed;
+    float: right;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    font-size: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#post:hover {
+    color: #212529;
+    background-color: #7f81eb;
+    text-decoration: none;
+}
+
+.card-img-top {
+    height: 10rem;
+    width: 184.579px;
+}
+
+#seeMore {
+    /* float: right;
+    right: 100px; */
+    /* align-items: center; */
+    position: relative;
+}
+
+.dropProfile {
+    padding: 1rem;
+}
+
+.dropMenu {
+    transform: translateX(-50%);
+}
+
+.form-control {
+    width: 10rem;
+}
+
+.btn {
+    color: whitesmoke;
+    background-color: #563d7c;
+}
+
+.btn:hover {
+    color: #212529;
+    background-color: #7f81eb;
+    text-decoration: none;
+}
+
+/* BLOGHome.html */
+.blogHomeSection{
+    width: 100%;
+    display: flex ;
+    flex-direction: column;
+}
+
+.blogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    padding: 1rem;
+    align-self: flex-start;
+    width: 90%;
+    height: 22rem;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.cardGroup {
+    width: 25rem;
+    height: 20rem;
+}
+
+/* Initially hide the content */
+#toggleContent {
+    height: 22rem;
+}
+
+/* Show the content when the "expanded" class is present */
+#toggleContent.expanded {
+    height: auto;
+}
+
+/* accept.css */
+.pop {
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    gap: 2rem
+}
+
+#fromUser,
+#postTitle,
+#description {
+    height: 3rem;
+    width: 20rem;
+    border-radius: 1rem;
+    margin-left: 1rem;
+    padding: 0 1rem;
+}
+
+.provider,
+.postTitle,
+.Description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* custom.css */
+
+.top {
+    margin: 5rem 5rem;
+    display: grid;
+}
+
+.details {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50rem;
+}
+
+.labels {
+    padding: 0.5rem;
+}
+
+.textArea {
+    margin-left: 1rem;
 }
