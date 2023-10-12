@@ -53,6 +53,7 @@ def contact(request):
         contact = Contact(name=name, email=email, message=message, date=datetime.today())
         contact.save()
         messages.success(request, 'Messages sent successfully')
+        print("done")
     
     return render(request, 'home/contact.html')
 
