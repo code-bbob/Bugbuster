@@ -477,3 +477,46 @@ body {
     .btn:hover {
         background-color: #7f81eb;
     }
+
+
+
+    /* post css */
+/* Apply some basic styles to the form container */
+/* Apply styles to the form container */
+    .sec {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+    }
+.pod {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid #333;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+    h1 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group1 {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        font-size: 1rem;
+        color: #333;
+    }
+        .form-control1 {
+        height: 3rem;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+    }
