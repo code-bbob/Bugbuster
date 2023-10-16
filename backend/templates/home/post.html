@@ -4,7 +4,8 @@
 
   <div class="pod">
     <h1>Write About you bug!</h1>
-    <form action="/post/" method="POST">
+    <form action="/post/" method="POST" enctype="multipart/form-data"> 
+      {% comment %} form ma enctype add grnu prxa for image uploads {% endcomment %}
       {% csrf_token %}
       <div class="form-group1">
         <label for="postTitle">Title :</label>
@@ -28,7 +29,7 @@
   
       </div>
         
-      <a href="#" class="btn btn-primary">Submit</a>
+      <input type=submit></input>
     </div>
   </form>
 </div>

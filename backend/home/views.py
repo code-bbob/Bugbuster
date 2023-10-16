@@ -104,8 +104,10 @@ def post(request):
         author = request.POST.get('author')
         content = request.POST.get('content')
         title = request.POST.get('title')
-        img = request.POST.get('img')
-        post = Post(author=author, content=content,title=title,img=img, date=datetime.today())
+        img = request.FILES.get('img')  # Use request.FILES to access the uploaded image file
+
+        # Save the uploaded image to the "media/blog/images" directory
+        post = Post(author=author, content=content, title=title, img=img, date=datetime.today())
         post.save()
         messages.success(request, 'Blog post successfully')
 
