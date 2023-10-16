@@ -104,7 +104,8 @@ def post(request):
         author = request.POST.get('author')
         content = request.POST.get('content')
         title = request.POST.get('title')
-        post = Post(author=author, content=content,title=title, date=datetime.today())
+        img = request.POST.get('img')
+        post = Post(author=author, content=content,title=title,img=img, date=datetime.today())
         post.save()
         messages.success(request, 'Blog post successfully')
 

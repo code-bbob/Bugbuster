@@ -16,6 +16,9 @@ class Post(models.Model):
         super(Post, self).save(**kwargs)
     
     date=models.DateField(default=now)
+    img=models.ImageField(upload_to='blog/images', default='')
+
+
     def __str__(self):
         return 'Message from ' + self.title + ': ' + self.author
 
