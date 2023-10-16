@@ -1,31 +1,36 @@
 {% extends 'home/layout.html' %} {% block body %}
 
-<div class="pop">
-  <h1>Write About you bug!</h1>
-  <form action="/post/" method="POST">
-    {% csrf_token %}
-  <div class="postTitle">
-    <label for="postTitle">Title :</label>
-    <input type="text" name="title" id="title" placeholder="title" />
-  </div>
-  <div class="author">
-    <label for="postTitle">Author :</label>
-    <input type="text" name="author" id="author" placeholder="author" />
-  </div>
-  <div class="Description">
-    <label for="content">Description :</label>
-    <pre><textarea
-      name="content"
-      id="content"
-      cols="30"
-      rows="10"
-    ></textarea>
-    </pre>
-  </div>
+<div class="sec">
 
-  <input type="file" name="img" id="chooseFile" />
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="pod">
+    <h1>Write About you bug!</h1>
+    <form action="/post/" method="POST">
+      {% csrf_token %}
+      <div class="form-group1">
+        <label for="postTitle">Title :</label>
+        <input type="text" name="title" class="form-control1" placeholder="title" />
+      </div>
+      <div class="form-group1">
+        <label for="postTitle">Author :</label>
+        <input type="text" name="author" class="form-control1" placeholder="author" />
+      </div>
+      <div class="form-group1">
+        <label for="content">Description :</label>
+        <pre><textarea
+          name="content"
+          class="form-control1"
+          ></textarea>
+        </pre>
+      </div>
+                <div class="form-group1">
+            <label for="chooseFile">Upload File:</label>
+            <input type="file" name="img" id="chooseFile" class="form-control1" />
+  
+      </div>
+        
+      <a href="#" class="btn btn-primary">Submit</a>
+    </div>
+  </form>
 </div>
-</form>
-
+  
 {% endblock %}
