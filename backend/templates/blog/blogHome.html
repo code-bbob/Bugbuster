@@ -8,13 +8,14 @@
     {% for post in allPosts %}
     <div class="row cardGroup">
       <div class="col-4">
-        <div class="card" style="width: 20rem">
-          <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
+        <div class="card" style="width: 20rem;">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" class="card-img-top" alt="loading" />
           <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
             <p class="card-text">
               {{post.content| truncatechars:100}}
             </p>
+            <a href="/blog/{{post.slug}}" class="btn btn-primary">Read More</a>
           </div>
         </div>
       </div>
@@ -31,100 +32,56 @@
 </div>
 
 <!-- comapny private section -->
-<div class="section">
-  <h2 id="scope">Company Private:</h2>
+<div class="section blogHomeSection">
+
+  <h2 id="scope">Private:</h2>
   <br />
-  <div class="row">
-    <div class="col-4">
-      <div class="card" style="width: 20rem">
-        <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
-        <div class="card-body">
-          <h5 class="card-title">Bug Title</h5>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
-            quas ipsum
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="blogContainer" id="toggleContent">
+    {% for post in allPosts %}
+    <div class="row cardGroup">
+      <div class="col-4">
+        <div class="card" style="width: 20rem;">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" class="card-img-top" alt="loading" />
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">
+              {{post.content| truncatechars:100}}
+            </p>
+            <a href="/blog/{{post.slug}}" class="btn btn-primary">Read More</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-4">
-      <div class="card" style="width: 20rem">
-        <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
-        <div class="card-body">
-          <h5 class="card-title">Bug title</h5>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            doloremque quasi, quas deserunt invento
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 20rem">
-        <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
-        <div class="card-body">
-          <h5 class="card-title">Bug title</h5>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima vero
-            corporis
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
   <!-- see more -->
   <a href="#" class="btn" id="seeMore">See more</a>
 </div>
 <!-- public section -->
-<div class="section">
-  <h2 id="scope">Public:</h2>
+<div class="section blogHomeSection">
+
+  <h2 id="scope">Private:</h2>
   <br />
-  <div class="row">
-    <div class="col-4">
-      <div class="card" style="width: 20rem">
-        <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
-        <div class="card-body">
-          <h5 class="card-title">Bug Title</h5>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
-            quas ipsum
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="blogContainer" id="toggleContent">
+    {% for post in allPosts %}
+    <div class="row cardGroup">
+      <div class="col-4">
+        <div class="card" style="width: 20rem;">
+          <img src="/media/{{post.image}}" class="card-img-top" alt="loading" />
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">
+              {{post.content| truncatechars:100}}
+            </p>
+            <a href="/blog/{{post.slug}}" class="btn btn-primary">Read More</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-4">
-      <div class="card" style="width: 20rem">
-        <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
-        <div class="card-body">
-          <h5 class="card-title">Bug title</h5>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            doloremque quasi, quas deserunt invento
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 20rem">
-        <img src="./img/logo-min.png" class="card-img-top" alt="loading" />
-        <div class="card-body">
-          <h5 class="card-title">Bug title</h5>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima vero
-            corporis
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
   <!-- see more -->
-  <a href="#" class="btn" id="seeMore">See mores</a>
+  <a href="#" class="btn" id="seeMore">See more</a>
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
