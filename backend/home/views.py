@@ -30,16 +30,11 @@ def signup(request):
 
 @login_required(login_url='/login')
 def home(request):
-    if request.method == 'POST':
-        author = request.POST.get('author')
-        content = request.POST.get('content')
-        posts = Post(author=author, content=content, date=datetime.today())
-        posts.save()
-        messages.success(request, 'Posted Sucessfully')
-        return render(request, 'home/home.html')
+    allPosts = Post.objects.all()  
+    context = {'allPosts': allPosts}
+    messages.success(request, 'Posted Sucessfully')
+    return render(request, 'home/home.html', context)
     
-    else:
-        return render(request, 'home/home.html')
 
 def blogpersonal(request, slug):
     return HttpResponse('')
@@ -58,6 +53,7 @@ def contact(request):
         contact = Contact(name=name, email=email, message=message, date=datetime.today())
         contact.save()
         messages.success(request, 'Messages sent successfully')
+        print("done")
     
     return render(request, 'home/contact.html')
 
@@ -108,7 +104,10 @@ def post(request):
         author = request.POST.get('author')
         content = request.POST.get('content')
         title = request.POST.get('title')
-        post = Post(author=author, content=content,title=title, date=datetime.today())
+        img = request.FILES.get('img')  # Use request.FILES to access the uploaded image file
+
+        # Save the uploaded image to the "media/blog/images" directory
+        post = Post(author=author, content=content, title=title, img=img, date=datetime.today())
         post.save()
         messages.success(request, 'Blog post successfully')
 

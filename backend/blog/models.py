@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from django.utils.text import slugify
 
 # Create your models here.
 class Post(models.Model):
@@ -8,12 +9,18 @@ class Post(models.Model):
     author = models.TextField(max_length=44)
     title = models.CharField(max_length=255, default='')
     content = models.TextField()
-    slug = models.CharField(max_length=130, null=True, blank=True) 
+ 
+    slug = models.SlugField(max_length=130)
+    def save(self, **kwargs):
+        self.slug = slugify(self.title)
+        super(Post, self).save(**kwargs)
+    
     date=models.DateField(default=now)
+    img=models.ImageField(upload_to='blog/images/', default='')
+
 
     def __str__(self):
         return 'Message from ' + self.title + ': ' + self.author
-    
 
 class BlogComment(models.Model):
     sno= models.AutoField(primary_key=True)
@@ -26,3 +33,5 @@ class BlogComment(models.Model):
     
     def __str__(self):
         return self.comment[0:13] + "..." + "by" + " " + self.user.username
+    
+    
