@@ -1,0 +1,57 @@
+{% extends 'home/layout.html' %} {% block body %}
+
+        <div class="blogContainer">
+            <div class="section-one">
+                <div class="topSectionOne">
+                    <div class="reactions secOpt">
+                        <span class="material-symbols-outlined">
+                            add_reaction
+                        </span>
+                        2.1k
+                    </div>
+                    <div class="comment secOpt">
+                        <i class="fa-regular fa-comment"></i>
+                        730
+                    </div>
+                    <div class="share secOpt">
+                        <span class="material-symbols-outlined">
+                            ios_share
+                        </span>
+                        52
+                    </div>
+                </div>
+                <div class="Links">
+                    <p class="LinksName">Links</p>
+                    <div class="gitSection">
+                        <span class="material-symbols-outlined">
+                            linked_services
+                        </span>
+                        <div class="gitLink">
+                            <a href="#">
+                                https://github.com/kuhackfest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottomSectionOne">
+                    <p>Social</p>
+                    <div class="socialProfile">
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-two">
+                <div class="BlogTitle">{{post.title}}<span>#</span></div>
+                <div class="BlogAuthor">Uploaded by {{post.author}}</div>
+                <div class="BlogContent">{{post.content}}
+                </div>
+            
+            </div>
+            <div class="section-three"></div>
+        </div>
+
+        {% endblock %}

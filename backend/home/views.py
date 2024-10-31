@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from blog.models import Post
 
 
 
@@ -29,16 +30,11 @@ def signup(request):
 
 @login_required(login_url='/login')
 def home(request):
-    if request.method == 'POST':
-        author = request.POST.get('author')
-        content = request.POST.get('content')
-        posts = Post(author=author, content=content, date=datetime.today())
-        posts.save()
-        messages.success(request, 'Posted Sucessfully')
-        return render(request, 'home/home.html')
+    allPosts = Post.objects.all()  
+    context = {'allPosts': allPosts}
+    messages.success(request, 'Posted Sucessfully')
+    return render(request, 'home/home.html', context)
     
-    else:
-        return render(request, 'home/home.html')
 
 def blogpersonal(request, slug):
     return HttpResponse('')
@@ -57,6 +53,7 @@ def contact(request):
         contact = Contact(name=name, email=email, message=message, date=datetime.today())
         contact.save()
         messages.success(request, 'Messages sent successfully')
+        print("done")
     
     return render(request, 'home/contact.html')
 
@@ -85,3 +82,33 @@ def signup(request):
             return redirect('/signup')
     else:
         return render(request, 'home/signup.html')
+    
+
+def search(request):
+    query=request.GET['query']
+    if len(query)>78:
+        allPosts=Post.objects.none()
+    else:
+        allPostsTitle= Post.objects.filter(title__icontains=query)
+        allPostsAuthor= Post.objects.filter(author__icontains=query)
+        allPostsContent =Post.objects.filter(content__icontains=query)
+        allPosts=  allPostsTitle.union(allPostsContent, allPostsAuthor)
+    if allPosts.count()==0:
+        messages.warning(request, "No search results found. Please refine your query.")
+    params={'allPosts': allPosts, 'query': query}
+    return render(request, 'home/search.html', params)
+
+
+def post(request):
+    if request.method == 'POST':
+        author = request.POST.get('author')
+        content = request.POST.get('content')
+        title = request.POST.get('title')
+        img = request.FILES.get('img')  # Use request.FILES to access the uploaded image file
+
+        # Save the uploaded image to the "media/blog/images" directory
+        post = Post(author=author, content=content, title=title, img=img, date=datetime.today())
+        post.save()
+        messages.success(request, 'Blog post successfully')
+
+    return render(request, 'home/post.html')

@@ -20,12 +20,14 @@ from home import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('search/', views.search, name='search'),
     path('login/', views.loginuser, name='login'),
     path('signup/', views.signup, name='signup'),
     path('company/', views.company, name='company'),
     path('link/', views.link, name='link'),
     path('action/', views.action, name='action'),
     path('contact/', views.contact, name='contact'),
-    path('logoutUser', views.logoutUser, name='logoutUser')
+    path('logoutUser', views.logoutUser, name='logoutUser'),
+    path('post/', views.post, name='post'),
 ]
  

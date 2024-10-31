@@ -1,0 +1,15 @@
+{% extends 'blog/blogPage.html' %}
+
+{% block title %} Blogpost{% endblock title %}
+
+{% block body %}
+<div class="section-two">
+  <div class="BlogTitle">{{post.title}}<span>#</span></div>
+  <p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.author}}</a></p>
+  <div class="BlogContent">{{post.content}}
+  </div>
+</div>
+</div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+ {% endblock body %}
